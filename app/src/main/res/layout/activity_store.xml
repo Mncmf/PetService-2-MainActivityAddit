@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.activity.MedicalActivity">
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!--标题栏-->
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/cl_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="#00baad"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_alignParentTop="true">
+
+                <ImageView
+                    android:id="@+id/iv_back"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:paddingLeft="@dimen/space_large"
+                    android:paddingRight="@dimen/space_large"
+                    android:src="@mipmap/home"/>
+
+                <LinearLayout
+                    android:id="@+id/ll_search"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="12dp"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/search_item_background"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingLeft="12dp"
+                    android:paddingRight="12dp"
+                    app:layout_constraintLeft_toRightOf="@+id/iv_back"
+                    app:layout_constraintRight_toLeftOf="@+id/iv_map">
+
+                    <EditText
+                        android:id="@+id/edit_query"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:hint="请输入搜索关键字"
+                        android:imeOptions="actionSearch"
+                        android:singleLine="true"
+                        android:textSize="14sp"/>
+
+                    <ImageView
+                        android:id="@+id/iv_clear_search"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/space_normal"
+                        android:layout_marginTop="@dimen/space_normal"
+                        android:src="@mipmap/ic_delete"/>
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/iv_map"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:paddingLeft="@dimen/space_large"
+                    android:paddingRight="@dimen/space_large"
+                    android:src="@drawable/ic_map"
+                    android:textColor="@android:color/white"
+                    app:layout_constraintRight_toRightOf="parent"/>
+            </android.support.constraint.ConstraintLayout>
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/search_bar">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <!--轮播图-->
+                    <com.youth.banner.Banner
+                        android:id="@+id/banner"
+                        xmlns:app="http://schemas.android.com/apk/res-auto"
+                        android:layout_width="340dp"
+                        android:layout_height="140dp"
+                        android:layout_marginTop="25dp"
+                        android:layout_gravity="center"
+                        android:layout_below="@id/search_bar"/>
+
+                    <!--1*4模块-->
+                    <LinearLayout
+                        android:id="@+id/mode1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_below="@id/banner"
+                        android:gravity="center"
+                        android:layout_marginTop="16dp">
+
+                        <LinearLayout
+                            android:layout_marginRight="20dp"
+                            android:id="@+id/medical_module"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="8dp">
+
+                            <ImageView
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:background="@drawable/shape_store_corner_1"
+                                android:src="@drawable/medical_treatment" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="医疗"
+                                android:textSize="16sp" />
+
+                        </LinearLayout>
+
+
+
+                        <LinearLayout
+                            android:layout_marginRight="20dp"
+                            android:id="@+id/care_module"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="8dp">
+
+                            <ImageView
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:layout_gravity="center"
+                                android:src="@drawable/care"
+                                android:background="@drawable/shape_store_corner_2"/>
+
+                            <TextView
+                                android:layout_gravity="center"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="洗护"
+                                android:textSize="16sp"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_marginRight="20dp"
+                            android:id="@+id/care_module2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="8dp">
+
+                            <ImageView
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:layout_gravity="center"
+                                android:src="@drawable/pet_wash"
+                                android:background="@drawable/shape_store_corner_3"/>
+
+                            <TextView
+                                android:layout_gravity="center"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="洗护"
+                                android:textSize="16sp"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/store_module"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="8dp">
+
+                            <ImageView
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:src="@drawable/store"
+                                android:background="@drawable/shape_store_corner_4"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="商城"
+                                android:textSize="16sp"/>
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                    <!--2*2模块-->
+                    <LinearLayout
+                        android:layout_marginTop="20dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_below="@id/mode1">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center">
+
+                            <ImageView
+                                android:layout_width="160dp"
+                                android:layout_height="50dp"
+                                android:src="@drawable/store"
+                                android:background="@drawable/shape_home"/>
+
+                            <ImageView
+                                android:layout_width="160dp"
+                                android:layout_height="50dp"
+                                android:src="@drawable/store"
+                                android:background="@drawable/shape_home"
+                                android:layout_margin="8dp"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="-10dp"
+                            android:orientation="horizontal"
+                            android:gravity="center">
+
+                            <ImageView
+                                android:layout_width="160dp"
+                                android:layout_height="50dp"
+                                android:src="@drawable/store"
+                                android:background="@drawable/shape_home"/>
+
+                            <ImageView
+                                android:layout_width="160dp"
+                                android:layout_height="50dp"
+                                android:src="@drawable/store"
+                                android:background="@drawable/shape_home"
+                                android:layout_margin="8dp"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/tabs"
+                        android:layout_marginTop="20dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:background="@color/white"
+                        android:gravity="center">
+
+                        <com.example.administrator.petservice.widget.DropdownButton
+                            android:id="@+id/chooseType"
+                            android:layout_width="0px"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1" />
+
+                        <View
+                            android:layout_width="0.5dp"
+                            android:layout_height="18dp"
+                            android:background="#dddddd" />
+
+                        <com.example.administrator.petservice.widget.DropdownButton
+                            android:id="@+id/chooseLabel"
+                            android:layout_width="0px"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1" />
+
+                        <View
+                            android:layout_width="0.5dp"
+                            android:layout_height="18dp"
+                            android:background="#dddddd" />
+
+                        <com.example.administrator.petservice.widget.DropdownButton
+                            android:id="@+id/chooseOrder"
+                            android:layout_width="0px"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1" />
+                    </LinearLayout>
+
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/recommendFoodRecyclerView"
+                        android:layout_marginTop="30dp"
+                        android:layout_gravity="center"
+                        android:layout_width="340dp"
+                        android:layout_height="match_parent" />
+
+                </LinearLayout>
+
+            </ScrollView>
+
+
+
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+
+</RelativeLayout>

@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:fresco="http://schemas.android.com/apk/res-auto"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@drawable/list_view_item_click">
+
+    <LinearLayout
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/good_ll_marginLR"
+        android:layout_marginRight="@dimen/good_ll_marginLR"
+        android:layout_marginTop="@dimen/good_ll_marginTB"
+        android:layout_marginBottom="@dimen/good_ll_marginTB"
+        android:background="@drawable/list_view_item_click"
+        android:clickable="false"
+        android:gravity="center_vertical"
+        android:orientation="vertical">
+        
+        <RelativeLayout
+            android:id="@+id/good_photo_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true">
+                <ImageView
+                    android:id="@+id/good_image"
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:layerType="software"
+                    android:scaleType="centerCrop"
+                    android:background="#f5f5f5"
+                    android:src="@drawable/store"/>
+            </FrameLayout>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/good_ll_ll_marginLeft"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+                    <TextView
+                        android:id="@+id/good_tv_distance"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:text="0.5mm"
+                        android:textSize="@dimen/size_17"
+                        android:visibility="gone"/>
+                    <TextView
+                        android:id="@+id/good_tv_descripion"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:lines="2"
+                        tools:text="纯种二哈幼犬三火哈士奇幼犬"
+                        android:textColor="@color/black"
+                        android:textSize="18dp"/>
+                </RelativeLayout>
+                <LinearLayout
+                    android:id="@+id/good_fresh_order_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/good_fresh_order_marginRight"
+                    android:padding="@dimen/good_fresh_order_padding"
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@mipmap/fresh_order_img"
+                        android:visibility="gone"/>
+                </LinearLayout>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/good_tv_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_weight="0"
+                    tools:text=" "
+                    android:textColor="@color/good_price_color"
+                    android:textSize="@dimen/size_23"/>
+                <TextView
+                    android:id="@+id/good_tv_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_marginLeft="@dimen/good_price_marginLeft"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:singleLine="true"
+                    tools:text="￥150"
+                    android:textColor="#ff8d1a"
+                    android:textSize="15dp"/>
+                <TextView
+                    android:id="@+id/good_tv_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_marginRight="@dimen/good_count_marginRight"
+                    android:layout_weight="0"
+                    android:ellipsize="end"
+                    android:gravity="bottom"
+                    android:singleLine="true"
+                    tools:text=""
+                    android:textColor="@color/value_color"
+                    android:textSize="@dimen/size_17"/>
+                <TextView
+                    android:id="@+id/good_tv_area"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_marginRight="@dimen/good_area_marginRight"
+
+                    android:gravity="bottom"
+                    android:ellipsize="end"
+                    android:singleLine="true"
+                    tools:text="4265人已购买"
+                    android:textColor="@color/value_color"
+                    android:textSize="@dimen/size_17"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
